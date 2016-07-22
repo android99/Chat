@@ -1,10 +1,14 @@
 package com.hank.chat;
 
 import android.app.AlertDialog;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
@@ -35,5 +39,26 @@ public class MainActivity extends AppCompatActivity {
     private void processToken() {
         Intent intent = new Intent(this, RegistrationIntentService.class);
         startService(intent);
+    }
+
+    BroadcastReceiver receiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String msg = intent.getExtras().getString("message");
+            Log.d("onReceive", msg);
+        }
+    };
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        unregisterReceiver(receiver);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        IntentFilter filter = new IntentFilter(Message.ACTION_MESSAGE);
+        registerReceiver(receiver, filter);
     }
 }
