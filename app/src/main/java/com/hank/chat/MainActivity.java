@@ -22,6 +22,10 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             name = editText.getText().toString();
+                            getSharedPreferences("chat", MODE_PRIVATE)
+                                    .edit()
+                                    .putString("NAME", name)
+                                    .commit();
                             processToken();
                         }
                     }).show();
