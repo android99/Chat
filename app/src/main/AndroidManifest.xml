@@ -31,11 +31,19 @@
             android:permission="com.google.android.c2dm.permission.SEND">
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="com.hank.chat"></category>
             </intent-filter>
         </receiver>
         <service android:name=".MyGcmListenerService">
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+            </intent-filter>
+        </service>
+        <service android:name=".RegistrationIntentService">
+        </service>
+        <service android:name=".MyInstanceIDListenerService">
+            <intent-filter>
+                <action android:name="com.google.android.gms.iid.InstanceID"></action>
             </intent-filter>
         </service>
     </application>

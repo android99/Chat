@@ -2,6 +2,7 @@ package com.hank.chat;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.EditText;
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void processToken() {
-
+        Intent intent = new Intent(this, RegistrationIntentService.class);
+        startService(intent);
     }
 }
