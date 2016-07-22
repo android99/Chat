@@ -1,0 +1,35 @@
+{
+  "project_info": {
+    "project_number": "1091681452910",
+    "project_id": "braided-gravity-138011"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1091681452910:android:c2111f374b0b7da3",
+        "android_client_info": {
+          "package_name": "com.hank.chat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTXYUsN9H6qscAoM1NzsJNMitvCojM7zk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

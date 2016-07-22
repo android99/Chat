@@ -20,14 +20,14 @@ public class MainActivity extends AppCompatActivity {
                     .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
+                            name = editText.getText().toString();
                             processToken();
                         }
                     }).show();
-
         }
     }
 
     private void processToken() {
-        
+
     }
 }
